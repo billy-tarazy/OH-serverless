@@ -62,6 +62,7 @@ stages:
     environment: 'development'
     pool:
       vmImage: $(vmImageName)
+      local
 
     strategy:
       runOnce:
