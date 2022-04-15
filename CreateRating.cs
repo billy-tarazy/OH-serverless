@@ -16,7 +16,7 @@ namespace Company.Function
     {
         private static readonly HttpClient _httpClient = new HttpClient();
 
-        [FunctionName("CreateRating")]
+        [FunctionName("CreateRating")]   
         public static async Task<IActionResult> Run(
             [HttpTrigger(AuthorizationLevel.Function, "post", Route = null)] HttpRequest req,
             [CosmosDB(databaseName: "ratingsdb",collectionName: "ratingscontainer",
