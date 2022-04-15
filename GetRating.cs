@@ -14,9 +14,9 @@ namespace Company.Function
         public static IActionResult Run(
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = "ratings/{id}")] HttpRequest req,
             [CosmosDB("ratingsdb", "ratingscontainer", ConnectionStringSetting = "RatingsDatabase", SqlQuery = "Select * from ratings r where r.id = {id}")]IEnumerable<RatingModel> rating,
-            ILogger log)
+            ILogger log)         
         {
-            log.LogInformation("Getting Rating");
+            log.LogInformation("Getting Rating");  
             if (rating == null)
             {
                 return new NotFoundResult();
@@ -25,6 +25,6 @@ namespace Company.Function
             {
                 return new OkObjectResult(rating);
             }
-        }
+        }    
     }
 }

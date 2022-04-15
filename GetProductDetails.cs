@@ -13,7 +13,7 @@ namespace Company.Function
             [HttpTrigger(AuthorizationLevel.Function, "get", Route = null)] HttpRequest req,
             ILogger log)
         {
-            string productId = null;
+            string productId = null;   
             if (req.GetQueryParameterDictionary()?.TryGetValue(@"productId", out productId) == true
                 && !string.IsNullOrWhiteSpace(productId))
             {
